@@ -60,7 +60,7 @@ class SmartQueryServices {
         Interacoes.informacaoGenerica(
             context,
             usuarioRecuperado.mensagem == null
-                ? "Erro ao registrar o smartquery!"
+                ? "Erro ao registrar o Smartquery!"
                 : usuarioRecuperado.mensagem,
             "Erro");
       }
