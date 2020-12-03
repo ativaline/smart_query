@@ -28,8 +28,8 @@ class SmartQueryServices {
   Future<void> onPressedMotor() async {
     var usuarioRecuperado = await UsuarioStorage().retornarLogin();
     if (convenioController == null || produtoController == null) {
-      Interacoes.informacaoGenerica(context,
-          "Convenio e Produto são de preenchimento obrigatório!", "Erro");
+      Interacoes.informacaoGenerica(
+          context, "Convenio e Produto são obrigatórios!", "Erro");
       return;
     }
     SmartqueryMotor model = new SmartqueryMotor(
