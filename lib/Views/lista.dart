@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:smart_query/Modelo/listaMotor.dart';
 import 'package:smart_query/Services.dart/listaSmartQueryService.dart';
 import 'package:smart_query/Utils/Temas.dart';
@@ -50,7 +51,7 @@ class CardLista extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        height: 120,
+        height: 170,
         width: double.infinity,
         padding: EdgeInsets.all(10.0),
         child: Column(
@@ -79,6 +80,14 @@ class CardLista extends StatelessWidget {
             SizedBox(height: 10),
             Row(
               children: [
+                Text('Tipo:'),
+                SizedBox(width: 10),
+                Text(item.parametros),
+              ],
+            ),
+            SizedBox(height: 10),
+            Row(
+              children: [
                 Text('Status:'),
                 SizedBox(width: 10),
                 Text(
@@ -90,6 +99,16 @@ class CardLista extends StatelessWidget {
                   style: TextStyle(
                       color: item.status > 2 ? Colors.green : Colors.orange),
                 ),
+              ],
+            ),
+            SizedBox(height: 10),
+            Row(
+              children: [
+                Text('Data Cadastro:'),
+                SizedBox(width: 10),
+                Text(//item.dataCadastro)
+                    DateFormat('dd/MM/yyyy – kk:mm')
+                        .format(DateTime.parse(item.dataCadastro))),
               ],
             ),
             SizedBox(height: 10),
